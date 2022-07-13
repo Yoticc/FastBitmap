@@ -1,3 +1,7 @@
+Just bitmap wrapper for speed using SetPixel and GetPixel
+
+As example use: 
+```
 // Nedded usings
 using FastBitmapUtils;
 using System.Drawing;
@@ -13,3 +17,4 @@ for (ushort x = 0; x < 1024; x++)
 Bitmap result = fast.GetResult(); // Get result
 
 result.Save("C:\\test.png"); // Save the image as file
+```
