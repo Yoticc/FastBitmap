@@ -3,7 +3,7 @@ using System.Drawing.Imaging;
 
 namespace FastBitmapUtils
 {
-    public unsafe sealed partial class FastBitmap 
+    public unsafe sealed class FastBitmap 
     {
         private Bitmap bmp;
         private IntPtr ptr;
@@ -11,7 +11,7 @@ namespace FastBitmapUtils
         private BitmapData data;
         private byte* pointer;
         public FastBitmap(Bitmap bitmap)
-        {
+        {           
             bmp = bitmap;
             data = bmp.LockBits(new Rectangle(0, 0, bmp.Width, bmp.Height), ImageLockMode.ReadWrite, bmp.PixelFormat);
             ptr = data.Scan0;
@@ -31,12 +31,7 @@ namespace FastBitmapUtils
         public Color GetPixel(ushort x, ushort y)
         {
             byte* p = (byte*)(pointer + ((x * bmp.Width + y) * 4));
-            return Color.FromArgb(
-                *(p + 3),
-                *(p + 2),
-                *(p + 1),
-                *p
-                );
+            return Color.FromArgb(*(p + 3), *(p + 2), *(p + 1), *p);
         }
         public Bitmap GetResult()
         {
