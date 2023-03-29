@@ -2,7 +2,7 @@ Just bitmap wrapper for speed using SetPixel and GetPixel
 
 As example use: 
 ```
-// Nedded usings
+// Needded usings
 using FastBitmapUtils;
 using System.Drawing;
 
