@@ -1,6 +1,6 @@
-Just bitmap wrapper for speed using SetPixel and GetPixel
+Just a bitmap wrapper for speedly using SetPixel and GetPixel
 
-As example use: 
+As example of using: 
 ```
 // Needded usings
 using FastBitmapUtils;
